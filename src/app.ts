@@ -1,24 +1,22 @@
-let nome : string;
-let sobrenome: string;
-let nomeCompleto: string;
-let idade: number;
-let brasileiro: boolean;
-let enderecos : string[];
+import { Pessoa } from "./Pessoa";
+import { Aluno, SituacaoAluno } from "./Aluno";
+import { Professor } from "./Professor";
 
-nome = 'walber';
-sobrenome = 'Ruthierre';
-nomeCompleto = nome + " " + sobrenome;
-idade = 29;
-brasileiro = true;
-enderecos = ['Rua Z, numero 15', 'rua A, numero 30'];
+const walber: Aluno = new Aluno('masculino','00000000', 'walber', 'ruthierre', 29, true,['rua A'],'programação', SituacaoAluno.ATIVO);
+//const wick: Pessoa = new Pessoa("john", "wick", 23, true , ["Rua b"]);
 
-let exibirNomeCompleto = function(): string {
-    return (`Nome completo é : ${nomeCompleto}`);
-}
+const wick : Professor = new Professor("Wick","Ruthierre",29, false, "Masculino","0909090909",["rua Z"],15000 );
 
-let recuperarEndereco = function(posicao: number): string {
-    return (enderecos[posicao]);
-}
+//const diego : Professor = new Professor(202300112233, " diego armando", 35, "masculino", "000.000.0000-00", "rua A do zenzin ");
 
-console.log(exibirNomeCompleto());
-console.log(recuperarEndereco(1));
+
+console.log(walber);
+console.log(wick);
+
+walber.submeterProjetoExtensao();
+walber.submeterProjetoPesquisa();
+
+wick.submeterProjetoExtensao();
+wick.submeterProjetoPesquisa();
+walber.exibirEndereco();
+wick.exibirEndereco();
