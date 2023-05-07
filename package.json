@@ -20,9 +20,9 @@
   "author": "Walber Ruthierre da Costa",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ruthierre/projetoPooTypescript/issues"
+    "url": "https://github.com/ruthierre/PooComTypescript.gitgit"
   },
-  "homepage": "https://github.com/ruthierre/projetoPooTypescript#readme",
+  "homepage": "",
   "devDependencies": {
     "@types/node": "^20.1.0",
     "sucrase": "^3.32.0",
