@@ -1,0 +1,5 @@
+interface Endereco {
+    
+
+    exibirEndereco(): void;
+}
