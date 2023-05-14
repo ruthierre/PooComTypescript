@@ -1,22 +1,14 @@
-import { Pessoa } from "./Pessoa";
-import { Aluno, SituacaoAluno } from "./Aluno";
-import { Professor } from "./Professor";
+import { Pessoa } from "./Pessoa/Pessoa";
+import { Aluno, SituacaoAluno } from "./Aluno/Aluno";
+import { Professor } from "./Professor/Professor";
+import { Endereco } from "./Endereco/Endereco";
 
-const walber: Aluno = new Aluno('masculino','00000000', 'walber', 'ruthierre', 29, true,['rua A'],'programação', SituacaoAluno.ATIVO);
-//const wick: Pessoa = new Pessoa("john", "wick", 23, true , ["Rua b"]);
+const localAluno: Endereco = new Endereco('Rua A', ' bairro B', 0, '49300-000','Sergipe');
+const localProfessor: Endereco = new Endereco('Rua D', ' bairro C', 1, '49300-000','Sergipe');
 
-const wick : Professor = new Professor("Wick","Ruthierre",29, false, "Masculino","0909090909",["rua Z"],15000 );
-
-//const diego : Professor = new Professor(202300112233, " diego armando", 35, "masculino", "000.000.0000-00", "rua A do zenzin ");
+const walber: Pessoa = new Aluno('masculino','00000000', 'walber', 'ruthierre', 29, true,[localAluno],'programação', SituacaoAluno.ATIVO);
+const wick : Pessoa = new Professor("Wick","Ruthierre",29, false, "Masculino","0909090909",[localProfessor],15000 );
 
 
 console.log(walber);
 console.log(wick);
-
-walber.submeterProjetoExtensao();
-walber.submeterProjetoPesquisa();
-
-wick.submeterProjetoExtensao();
-wick.submeterProjetoPesquisa();
-walber.exibirEndereco();
-wick.exibirEndereco();

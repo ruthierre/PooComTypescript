@@ -1,11 +1,12 @@
-import { Pessoa } from "./Pessoa";
-import { Projeto } from "./Projeto";
+import { Pessoa } from "../Pessoa/Pessoa";
+import { Projeto } from "../Projeto/Projeto";
+import { Endereco } from "../Endereco/Endereco";
 
-class Aluno extends Pessoa implements Projeto , Endereco {
+class Aluno extends Pessoa implements Projeto {
    
   
-    curso: string;
-    situacao: SituacaoAluno;
+    private _curso: string;
+    protected situacao: SituacaoAluno;
 
     constructor(
         sexo: string,
@@ -14,31 +15,37 @@ class Aluno extends Pessoa implements Projeto , Endereco {
         sobrenome: string,
         idade: number,
         brasileiro: boolean,
-        enderecos: string[],
+        enderecos: Endereco[],
         curso: string,
         situacao: SituacaoAluno){
         
         super(nome, sobrenome, idade, brasileiro, enderecos,sexo,CPF); 
-        this.curso = curso;
+        this._curso = curso;
         this.situacao = situacao;
         this.matricula = this.gerarMatricula();
     }
+
+    public get curso(): string {
+        return this._curso;
+    }
+    public set curso(value: string) {
+        this._curso = value;
+    }
+    
     submeterProjetoPesquisa(): void {
-        throw new Error("Method not implemented.");
+       console.log('projeto pesquisa de Aluno');
     }
     submeterProjetoExtensao(): void {
-        throw new Error("Method not implemented.");
+        console.log('projeto Extensão de Aluno');
     }
     exibirEndereco(): void {
-        // rua = 'rua Z';
-        // bairro = 'centro';
-        // cep = '49300-000';
-        // numero = '000'
-        console.log('endereco do aluno');
+        console.log('exibir endereco do aluno');
     }
 
     gerarMatricula(): number {
-        throw new Error("Method not implemented.");
+        let data: number = new Date().getFullYear();
+        let numero: number = Math.floor(Math.random() * (9999 - 1000 + 1 ) + 1000);
+        return Number(`${data}${numero}`);
     }
 }
     enum SituacaoAluno {

@@ -1,9 +1,11 @@
-import { Pessoa } from "./Pessoa";
-import { Projeto } from "./Projeto";
+import { Endereco } from "../Endereco/Endereco";
+import { Pessoa } from "../Pessoa/Pessoa";
+import { Projeto } from "../Projeto/Projeto";
 
-class Professor  extends Pessoa implements Projeto , Endereco {
+
+class Professor  extends Pessoa implements Projeto {
    
-    salario: number;
+    private _salario: number;
 
     constructor(
 
@@ -13,13 +15,22 @@ class Professor  extends Pessoa implements Projeto , Endereco {
         brasileiro: boolean,
         sexo: string,
         CPF: string,
-        enderecos: string[],
-        salario: number){
+        enderecos: Endereco[],
+        salario: number
+        ) {
         
-        super(nome,sobrenome,idade, brasileiro,enderecos,sexo, CPF);
-        this.salario = salario;
+        super(nome,sobrenome,idade, brasileiro,enderecos ,sexo, CPF);
+        this._salario = salario;
         this.matricula = this.gerarMatricula();
+        }
+
+    public get salario(): number{
+        return this._salario;
     }
+    public set salario(value:number){
+        this._salario;
+    }
+
     exibirEndereco(): void {
        console.log('endereço do professor');
     }
