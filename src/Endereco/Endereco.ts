@@ -46,7 +46,7 @@ class Endereco {
         return this._estado;
     }
     public set estado(value: string){
-        this.estado;
+        this._estado;
     }
 }
 

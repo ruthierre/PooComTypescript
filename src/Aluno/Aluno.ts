@@ -1,11 +1,13 @@
 import { Pessoa } from "../Pessoa/Pessoa";
 import { Projeto } from "../Projeto/Projeto";
 import { Endereco } from "../Endereco/Endereco";
+import { Disciplina } from "../Disciplina/disciplina";
 
 class Aluno extends Pessoa implements Projeto {
    
   
     private _curso: string;
+    private _disciplina: Disciplina[] = [];
     protected situacao: SituacaoAluno;
 
     constructor(
@@ -17,10 +19,12 @@ class Aluno extends Pessoa implements Projeto {
         brasileiro: boolean,
         enderecos: Endereco[],
         curso: string,
+        disciplina: Disciplina[],
         situacao: SituacaoAluno){
         
         super(nome, sobrenome, idade, brasileiro, enderecos,sexo,CPF); 
         this._curso = curso;
+        this._disciplina = disciplina;
         this.situacao = situacao;
         this.matricula = this.gerarMatricula();
     }
