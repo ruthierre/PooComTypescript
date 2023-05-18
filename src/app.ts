@@ -7,7 +7,7 @@ import { Nota } from "./Nota/notas";
 
 const localAluno: Endereco = new Endereco('Rua A', ' bairro B', 0, '49300-000','Sergipe');
 const localProfessor: Endereco = new Endereco('Rua D', ' bairro C', 1, '49300-000','Sergipe');
-const construcaoSiteI = new Nota().calcularMediaPonderada(9.7,1,10,1);
+const construcaoSiteI = new Nota().calcularMediaPonderada(9.7,1,10,1); //instância das notas para calculo da média ponderada
 const programacaoII = new Nota().calcularMediaPonderada(10,3,9,3);
 const bancoDeDadosI = new Nota().calcularMediaPonderada(8,2,10,2);
 
