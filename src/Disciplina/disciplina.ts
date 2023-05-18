@@ -1,13 +1,15 @@
+import { Nota } from "../Nota/notas";
+
 class Disciplina {
     
     private _nome: string;
     private _cargaHoraria: number;
-    private _periodo: number;
+    private _nota: number;
 
-    constructor( nome:string, cargaHoraria: number, periodo:number){
+    constructor( nome:string, cargaHoraria: number, nota:number){
         this._nome = nome;
         this._cargaHoraria = cargaHoraria;
-        this._periodo = periodo;
+        this._nota = nota;
     }
 
     public get nome(): string{
@@ -26,13 +28,14 @@ class Disciplina {
         this._cargaHoraria;
     }
 
-    public get periodo(): number{
-        return this._periodo;
+    public get nota(): number{
+        return this._nota;
     }
 
-    public set periodo(value: number){
-        this._periodo;
+    public set nota(value: number){
+        this._nota;
     }
+
+   
 }
-
 export{ Disciplina };

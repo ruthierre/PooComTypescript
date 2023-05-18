@@ -20,13 +20,15 @@ class Aluno extends Pessoa implements Projeto {
         enderecos: Endereco[],
         curso: string,
         disciplina: Disciplina[],
-        situacao: SituacaoAluno){
+        situacao: SituacaoAluno,
+        ){
         
         super(nome, sobrenome, idade, brasileiro, enderecos,sexo,CPF); 
         this._curso = curso;
         this._disciplina = disciplina;
         this.situacao = situacao;
         this.matricula = this.gerarMatricula();
+        
     }
 
     public get curso(): string {
